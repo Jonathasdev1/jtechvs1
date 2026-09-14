@@ -5,7 +5,8 @@ A entrada atual é index.html, com style.css, script.js e img/. O código React 
 ## Correções aplicadas
 
 - npm run build executa node netlify-build.mjs, que copia a loja completa para dist/ sem precisar das dependências do Vite para gerar os arquivos.
-- netlify.toml publica dist/ e seleciona Node 22.
+- netlify.toml publica dist/, seleciona Node 20 e ignora scripts de instalação porque o build usa apenas módulos nativos do Node.
+- package-lock.json fixa versões válidas e reproduzíveis das dependências.
 - Os assets locais usam /style.css, /script.js e /img/... para funcionar também em URLs internas.
 - O fallback /* -> /index.html (200) já existia e foi preservado. Não é necessário duplicá-lo em _redirects. Ele não implementa as páginas React nem endpoints de API.
 

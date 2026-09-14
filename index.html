@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="J-TECH loja virtual com ofertas, produtos e conteúdo editorial para casa, presentes e rotina digital."
+    />
+    <title>J-TECH | Loja de Afiliados</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="topbar">
+        <div class="topbar-inner">
+          <span>Frete grátis acima de R$19</span>
+          <span>Pagamento seguro</span>
+          <span>Atendimento rápido</span>
+        </div>
+      </div>
+
+      <div class="header-inner">
+        <a href="#top" class="brand" aria-label="Ir para a página inicial">
+          <img
+            src="img/logo.jpeg"
+            alt="Logo J-TECH"
+            class="brand-logo"
+          />
+          <div class="brand-copy">
+            <strong>J-TECH</strong>
+            <small>Transformando dados em presença digital</small>
+          </div>
+        </a>
+
+        <label class="search-box" aria-label="Buscar produtos">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 2a8 8 0 1 1 0 16a8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12a6 6 0 0 0 0-12zm9.707 19.293l-4.5-4.5l1.414-1.414l4.5 4.5l-1.414 1.414z"/>
+          </svg>
+          <input type="search" placeholder="Buscar produtos, marcas e muito mais..." />
+          <button class="search-button" type="button">Buscar</button>
+        </label>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#top">Início</a>
+          <div class="nav-dropdown">
+            <button type="button">Categorias</button>
+            <div class="dropdown-menu">
+              <a href="#vitrine">Brinquedos</a>
+              <a href="#vitrine">Casa</a>
+              <a href="#vitrine">Escritório</a>
+              <a href="#vitrine">Presentes</a>
+            </div>
+          </div>
+          <a href="#reviews">Resenhas</a>
+          <a href="#offers">Ofertas</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button mobile-search" type="button" aria-label="Pesquisar">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10 2a8 8 0 1 1 0 16a8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12a6 6 0 0 0 0-12zm9.707 19.293l-4.5-4.5l1.414-1.414l4.5 4.5l-1.414 1.414z"/>
+            </svg>
+          </button>
+          <button class="header-action" type="button">Login</button>
+          <button class="cart-button" type="button" aria-label="Carrinho de compras">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/>
+            </svg>
+            <span>Carrinho</span>
+            <strong>2</strong>
+          </button>
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" aria-label="Menu móvel">
+        <a href="#top">Início</a>
+        <a href="#vitrine">Brinquedos</a>
+        <a href="#vitrine">Casa</a>
+        <a href="#reviews">Resenhas</a>
+        <a href="#offers">Ofertas</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <span class="eyebrow">Curadoria para presente e uso diário</span>
+          <h1 id="hero-title">Produtos escolhidos para facilitar a rotina e surpreender.</h1>
+          <p>
+            Ofertas com valor real, itens com curadoria e variedade para casa, família e presentes.
+          </p>
+          <div class="hero-actions">
+            <a href="#vitrine" class="primary-button">Ver vitrine</a>
+            <a href="#offers" class="secondary-button">Ver ofertas</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Destaque de produto">
+          <div class="mini-card mini-card--one">
+            <span>⭐ 4,9</span>
+            <strong>Clientes satisfeitos</strong>
+          </div>
+          <div class="mini-card mini-card--two">
+            <span>⚡ Entrega</span>
+            <strong>Rápida</strong>
+          </div>
+          <div class="product-spotlight">
+            <img
+              src="img/D_NQ_NP_2X_924584-MLA113615054109_062026-F.webp"
+              alt="Máquina de barbear premium em ouro"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="category-strip" aria-label="Categorias disponíveis">
+        <button class="category-chip active" type="button">Todos</button>
+        <button class="category-chip" type="button">Brinquedos</button>
+        <button class="category-chip" type="button">Casa</button>
+        <button class="category-chip" type="button">Escritório</button>
+        <button class="category-chip" type="button">Presentes</button>
+      </section>
+
+      <section class="offers-section" id="offers" aria-labelledby="offers-title">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Seleção especial</span>
+            <h2 id="offers-title">Ofertas do dia</h2>
+          </div>
+          <a href="#vitrine">Ver todos</a>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer-card offer-card--primary">
+            <span class="offer-tag">-18%</span>
+            <h3>Kit para casa</h3>
+            <p>Organização e praticidade para o dia a dia.</p>
+            <strong>R$ 149,90</strong>
+          </article>
+
+          <article class="offer-card offer-card--accent">
+            <span class="offer-tag">-12%</span>
+            <h3>Presentes muito amados</h3>
+            <p>Itens úteis com design moderno e leveza.</p>
+            <strong>R$ 89,90</strong>
+          </article>
+
+          <article class="offer-card offer-card--neutral">
+            <span class="offer-tag">-22%</span>
+            <h3>Escolha criativa</h3>
+            <p>Ideias práticas para surpreender em qualquer ocasião.</p>
+            <strong>R$ 119,00</strong>
+          </article>
+
+          <article class="offer-card offer-card--soft">
+            <span class="offer-tag">-9%</span>
+            <h3>Popular agora</h3>
+            <p>Produtos com acabamento premium e uso diário.</p>
+            <strong>R$ 59,90</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="vitrine" aria-labelledby="catalog-title">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Vitrine em destaque</span>
+            <h2 id="catalog-title">10 produtos para você vender agora</h2>
+          </div>
+          <a href="#vitrine">Ver todos</a>
+        </div>
+
+        <div class="catalog-block">
+          <div class="category-heading">
+            <h3>Mais vendidos</h3>
+            <a href="#vitrine">Ver todos</a>
+          </div>
+
+
+          
+          <div class="product-grid">
+            <!-- card 1 ********************************************************************** -->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_673950-MLA99394598783_112025-P.webp" alt="Fone Bluetooth Dapon H02D Over-ear" />
+                <span class="discount-badge">-50%</span>
+                <span class="partner-label">Mais vendido</span>
+              </div>
+              <div class="product-body">
+                <h4>Fone Bluetooth Dapon H02D Over-ear 22h</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 74,00</span>
+                  <span class="old-price">R$ 149,00</span>
+                </div>
+                <!-- link afiliado1 ********************************************************************** -->
+                <a class="buy-button" href="https://meli.la/13PjfLp" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!--final card 1 ******************************************************************************************************************************-->
+          
+<!--  inicio card 2 ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_758732-MLA103081906542_012026-P.webp" alt="Power Bank Basike com cabo embutido" />
+                <span class="discount-badge">-35%</span>
+                <span class="partner-label">Mais vendido</span>
+              </div>
+              <div class="product-body">
+                <h4>Power Bank Basike 20.000mAh com cabo embutido</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 139,10</span>
+                  <span class="old-price">R$ 214,00</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/2aqdYn6" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card2 ******************************************************************************************************************************-->
+            
+<!--Inicio card 3   ******************************************************************************************************************************-->
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_605578-MLA113633610823_062026-F.webp" alt="Smartwatch com monitoramento inteligente" />
+                <span class="discount-badge">-52%</span>
+                <span class="partner-label">Mais procurado</span>
+              </div>
+              <div class="product-body">
+                <h4>Smartwatch com monitoramento inteligente</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 95,90</span>
+                  <span class="old-price">R$ 159,90</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/2vjwu2m" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!--Final card3  ******************************************************************************************************************************-->
+
+
+<!--Inicio card 4   ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_831289-MLA106776200690_022026-P.webp" alt="Creme hidratante CeraVe para pele seca" />
+                <span class="discount-badge">-50%</span>
+                <span class="partner-label">Mais vendido</span>
+              </div>
+              <div class="product-body">
+                <h4>Creme Hidratante CeraVe 50g para pele seca</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 34,95</span>
+                  <span class="old-price">R$ 69,00</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/1AL83CW" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card 4 ******************************************************************************************************************************-->
+ 
+<!--Inicio card 5   ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_906294-MLA84549494604_052025-P.webp" alt="O Boticário Insensatez Deo Colônia 100ml" />
+                <span class="discount-badge">-50%</span>
+                <span class="partner-label">Mais vendido</span>
+              </div>
+              <div class="product-body">
+                <h4>O Boticário Insensatez Deo Colônia 100ml</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 86,90</span>
+                  <span class="old-price">R$ 174,00</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/1M28zX7" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card 5 ******************************************************************************************************************************-->
+
+<!--Inicio card 6   ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_764326-MLB112269395077_052026-P.webp" alt="Tênis feminino academia treino O2X cinza" />
+                <span class="discount-badge">-34%</span>
+                <span class="partner-label">Mais vendido</span>
+              </div>
+              <div class="product-body">
+                <h4>Tênis Feminino O2X Academia e Treino</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 46,00</span>
+                  <span class="old-price">R$ 69,00</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/2YxsK9n" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card 6 ******************************************************************************************************************************-->
+
+<!--Inicio card 7   ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="img/D_NQ_NP_2X_924584-MLA113615054109_062026-F.webp" alt="Máquina de barbear premium" />
+                <span class="discount-badge">-15%</span>
+                <span class="partner-label">Loja parceira</span>
+              </div>
+              <div class="product-body">
+                <h4>Máquina de barbear premium 5 em 1</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 249,90</span>
+                  <span class="old-price">R$ 299,90</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/2BTjH2j" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card 7 ******************************************************************************************************************************-->
+
+<!--Inicio card 8   ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_710675-MLB89102120983_082025-F-lavadora-lava-jato-portatil-pressao-2-baterias--maleta.webp" alt="Lavadora lava jato portátil" />
+                <span class="discount-badge">-55%</span>
+                <span class="partner-label">Loja parceira</span>
+              </div>
+              <div class="product-body">
+                <h4>Lavadora Lava Jato Portátil Pressão 2 Baterias + Maleta</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 102,72</span>
+                  <span class="old-price">R$ 229,90</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/2nt2pGR" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card 8 ******************************************************************************************************************************-->
+
+<!--Inicio card 9   ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_850035-MLB82481971772_022025-F-creatina-100-pura-60-capsulas-integralmedica.webp" alt="Cápsulas de creatina 100% pura" />
+                <span class="discount-badge">-43%</span>
+                <span class="partner-label">Loja parceira</span>
+              </div>
+              <div class="product-body">
+                <h4>Cápsulas de creatina 100% pura - 60 unidades</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 17,99</span>
+                  <span class="old-price">R$ 31,90</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/2nnowxT" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card 9 ******************************************************************************************************************************-->
+
+<!--Inicio card 10   ******************************************************************************************************************************-->
+            <article class="product-card">
+              <div class="product-media">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_977172-MLA107049793514_022026-P.webp" alt="Balança digital de precisão para cozinha" />
+                <span class="discount-badge">-50%</span>
+                <span class="partner-label">Mais vendido</span>
+              </div>
+              <div class="product-body">
+                <h4>Balança Digital de Precisão para Cozinha</h4>
+                <div class="price-line">
+                  <span class="current-price">R$ 19,30</span>
+                  <span class="old-price">R$ 38,00</span>
+                </div>
+                <a class="buy-button" href="https://meli.la/1e2DZ7x" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 1 0 4a2 2 0 0 1 0-4zm10 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4zM7 16h11a1 1 0 0 0 1-1l1-7H6.2L5.6 4H2V2h4.4l.7 4H21a1 1 0 0 1 .97 1.24l-1.7 7A1 1 0 0 1 19.3 15H7z"/></svg>
+                  Ver oferta
+                </a>
+              </div>
+            </article>
+<!-- final card 10 ******************************************************************************************************************************-->
+
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Conteúdo útil</span>
+            <h2 id="reviews-title">Resenhas &amp; Dicas</h2>
+          </div>
+          <a href="#reviews">Ver todos</a>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Como organizar sua mesa" />
+            <div class="review-body">
+              <span class="review-tag">Dica</span>
+              <h3>Como organizar sua mesa com itens que realmente ajudam</h3>
+              <p>Veja as escolhas mais práticas para manter um ambiente mais leve e funcional.</p>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Melhores presentes para crianças" />
+            <div class="review-body">
+              <span class="review-tag">Guia</span>
+              <h3>Melhores presentes para crianças: ideias que fazem sentido</h3>
+              <p>Escolhas simples, criativas e que incentivam brincadeiras e aprendizado.</p>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Iluminação em ambientes" />
+            <div class="review-body">
+              <span class="review-tag">Review</span>
+              <h3>Iluminação que muda o clima do ambiente sem complicar</h3>
+              <p>Descubra soluções discretas que deixam a casa mais acolhedora e funcional.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="brand--footer">
+          <a href="#top" class="brand" aria-label="Ir para a página inicial">
+            <img
+              src="img/logo.jpeg"
+              alt="Logo J-TECH"
+              class="brand-logo"
+            />
+            <div class="brand-copy">
+              <strong>J-TECH</strong>
+              <small>Transformando dados em presença digital</small>
+            </div>
+          </a>
+        </div>
+
+        <div>
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#top">Sobre</a></li>
+            <li><a href="#vitrine">Produtos</a></li>
+            <li><a href="#offers">Ofertas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Redes sociais</h4>
+          <ul>
+            <li><a href="#top">Instagram</a></li>
+            <li><a href="#top">Pinterest</a></li>
+            <li><a href="#top">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="affiliate-note">
+        Esta página contém links de afiliado. Ao comprar por eles, podemos receber uma comissão, sem custo adicional para você.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -70,21 +70,29 @@
             <span>Carrinho</span>
             <strong>2</strong>
           </button>
-          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <!-- <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">-->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+              >
             <span></span>
             <span></span>
             <span></span>
-          </button>
+          </button> 
         </div>
       </div>
 
-      <div class="mobile-panel" aria-label="Menu móvel">
-        <a href="#top">Início</a>
-        <a href="#vitrine">Brinquedos</a>
-        <a href="#vitrine">Casa</a>
-        <a href="#reviews">Resenhas</a>
-        <a href="#offers">Ofertas</a>
-      </div>
+      <!-- <div class="mobile-panel" aria-label="Menu móvel"> -->
+        <div class="mobile-panel" id="mobile-menu" aria-label="Menu móvel">
+          <a href="#top">Início</a>
+          <a href="#vitrine">Brinquedos</a>
+          <a href="#vitrine">Casa</a>
+          <a href="#reviews">Resenhas</a>
+          <a href="#offers">Ofertas</a>
+        </div> 
     </header>
 
     <main>

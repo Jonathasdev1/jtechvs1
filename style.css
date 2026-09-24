@@ -82,14 +82,52 @@ img {
 }
 
 .header-inner {
-  width: min(1200px, calc(100% - 32px));
+ /* width: min(1200px, calc(100% - 32px)); 
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto minmax(320px, 1.4fr) auto auto;
   align-items: center;
   gap: 18px;
+  min-height: 92px;*/
+
+  /*ajuste do cabeçalho */
+ width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+
+  /* Primeira linha: marca, busca e botões. */
+  grid-template-columns: auto minmax(0, 1fr) auto;
+
+  align-items: center;
+  gap: 16px;
   min-height: 92px;
+  padding: 16px 0;
+
 }
+  /* Permite que os elementos encolham dentro das colunas. */
+.header-inner > * {
+  min-width: 0;
+}
+/* Coloca a marca na primeira coluna. */
+.header-inner > .brand {
+  grid-column: 1;
+  grid-row: 1;
+}
+/* Coloca a busca na coluna central. */
+.header-inner > .search-box {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Coloca a navegação em uma segunda linha no computador. */
+.header-inner > .main-nav {
+  grid-column: 1 / -1; /* Ocupa todas as colunas. */
+  grid-row: 2;
+}
+
+
+
+
 
 .brand {
   display: inline-flex;
@@ -901,68 +939,217 @@ main,
   color: var(--muted);
   line-height: 1.5;
 }
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-@media (max-width: 980px) {
+
+/* ===== AJUSTES COMPARTILHADOS ===== */
+
+/* Permite que o campo de busca encolha sem alargar o cabeçalho. */
+.search-box input {
+  min-width: 0;
+  flex: 1;
+  font-size: 16px;
+}
+
+/* Mantém o tamanho do ícone e do botão dentro da busca. */
+.search-box svg,
+.search-button {
+  flex-shrink: 0;
+}
+
+/* Permite que os conteúdos das grades encolham. */
+.hero > *,
+.footer-grid > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Permite que a marca do rodapé quebre de linha se necessário. */
+.brand--footer .brand {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* O painel aparece somente nas larguras em que existe menu móvel. */
+.mobile-panel {
+  display: none;
+}
+
+
+/* ===== TABLETS E TELAS MENORES ===== */
+
+@media (max-width: 1100px) {
+
+  /* Permite quebrar as mensagens da faixa superior. */
+  .topbar-inner {
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    padding: 8px 0;
+    text-align: center;
+  }
+
+  /* Primeira linha com marca e botões. */
   .header-inner {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 12px 0;
   }
 
-  .search-box {
-    display: none;
+  /* Os botões passam para a segunda coluna. */
+  .header-inner > .header-actions {
+    grid-column: 2;
+    grid-row: 1;
   }
 
+  /* A busca fica visível em uma linha própria. */
+  .header-inner > .search-box {
+    display: flex;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  /* Os links do computador dão lugar ao menu móvel. */
   .main-nav {
     display: none;
   }
 
-  .menu-toggle,
-  .mobile-search {
+  /* Exibe o botão com três barras. */
+  .menu-toggle {
     display: inline-flex;
+    flex-shrink: 0;
   }
 
+  /* A busca já está visível, então a lupa extra é dispensável. */
+  .mobile-search {
+    display: none;
+  }
+
+  /* Posiciona o painel logo abaixo do cabeçalho. */
+  .mobile-panel {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 12px;
+    max-height: 60vh;
+    overflow-y: auto;
+    transform: translateY(-8px);
+  }
+
+  /* Mantém a animação de abertura compatível com o JavaScript. */
+  .mobile-panel.is-open {
+    transform: translateY(0);
+  }
+
+  /* Texto e imagem do destaque passam a ficar um abaixo do outro. */
   .hero {
-    grid-template-columns: 1fr;
-    padding-top: 30px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding-top: 28px;
   }
 
+  .hero-copy {
+    padding-right: 0;
+  }
+
+  /* Remove o espaço mínimo de 460px do destaque. */
+  .hero-visual {
+    min-height: 0;
+    padding: 16px 0;
+  }
+
+  /* Duas colunas para ofertas e produtos. */
   .offer-grid,
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .catalog-section .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .review-grid {
-    grid-template-columns: 1fr;
+  /* Uma coluna para resenhas e rodapé. */
+  .review-grid,
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
+
+/* ===== CELULARES ===== */
+
 @media (max-width: 620px) {
-  .header-inner {
-    width: min(100%, calc(100% - 24px));
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    gap: 12px;
+
+  /* Define margens laterais iguais para os contêineres principais. */
+  .topbar-inner,
+  .header-inner,
+  main,
+  .site-footer {
+    width: calc(100% - 24px);
   }
 
-  .brand-copy small {
-    letter-spacing: 0.04em;
-  }
-
+  /* As seções usam a largura que o elemento main já oferece. */
   .hero,
-  .site-footer,
   .offers-section,
   .catalog-section,
   .reviews {
-    width: min(100%, calc(100% - 24px));
+    width: 100%;
   }
 
+  .header-inner {
+    column-gap: 8px;
+  }
+
+  /* Reduz somente a logo do cabeçalho. */
+  .header-inner .brand-logo {
+    width: 80px;
+    height: 40px;
+  }
+
+  /* Mantém a logo e retira o texto adicional do cabeçalho compacto. */
+  .header-inner .brand-copy {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  /* Ajusta os botões para caberem na primeira linha. */
+  .header-action,
+  .cart-button {
+    min-height: 44px;
+    padding: 0 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Mantém o ícone e a quantidade do carrinho. */
+  .cart-button > span {
+    display: none;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .search-box {
+    gap: 8px;
+    padding-left: 12px;
+  }
+
+  .search-button {
+    min-height: 44px;
+    padding: 0 12px;
+  }
+
+  /* Faz o título acompanhar a largura da tela. */
   .hero-copy h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    line-height: 1.1;
   }
 
+  .hero-copy p {
+    font-size: 1rem;
+  }
+
+  /* Empilha os botões do destaque. */
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
@@ -973,23 +1160,46 @@ main,
     width: 100%;
   }
 
-  .section-header {
-    align-items: flex-start;
-    flex-direction: column;
+  /* A imagem principal aproveita a largura disponível. */
+  .product-spotlight {
+    width: min(100%, 380px);
   }
 
-  .offer-grid,
-  .product-grid,
-  .footer-grid {
-    grid-template-columns: 1fr;
+  /* Reduz os selos sobre a imagem principal. */
+  .mini-card {
+    max-width: 70%;
+    padding: 10px 12px;
   }
 
+  .mini-card--one {
+    left: 0;
+  }
+
+  .mini-card--two {
+    right: 0;
+  }
+
+  /* Coloca o link "Ver todos" abaixo do título. */
+  .section-header,
   .category-heading {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Exibe um cartão por linha no celular. */
+  .offer-grid,
+  .product-grid,
+  .review-grid,
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .category-strip {
+    gap: 8px;
   }
 
   .product-body h4 {
     min-height: initial;
   }
-}
+  }

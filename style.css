@@ -630,6 +630,14 @@ main,
 
 .offer-card--primary {
   background: linear-gradient(135deg, #1d4ed8 0%, #4f46e5 100%);
+
+ /* background-image: url("./img/kit-chave-catraca-segunda.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;*/
+
+
+
   color: #fff;
 }
 
@@ -712,6 +720,16 @@ main,
   gap: 18px;
 }
 
+.empty-results {
+  margin: 16px 0 0;
+  padding: 16px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+}
+
 .product-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -739,6 +757,15 @@ main,
   object-fit: contain;
   padding: 12px;
   background: #fff;
+}
+
+/* Mantém o vídeo do YouTube visível abaixo das imagens sem interferir no efeito de segunda imagem. */
+.product-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #000;
 }
 
 .discount-badge {
@@ -1203,3 +1230,29 @@ main,
     min-height: initial;
   }
   }
+
+/* Fim do CSS para telas pequenas */
+.product-media .img-hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.product-card:hover .img-hover,
+.product-card:focus-within .img-hover {
+  opacity: 1;
+}
+.product-media.mostrar-2 .img-hover {
+  opacity: 1;
+}
+
+.product-media .discount-badge,
+.product-media .partner-label {
+  z-index: 2;
+}

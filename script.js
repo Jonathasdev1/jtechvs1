@@ -1,126 +1,105 @@
-
-/*
 document.addEventListener('DOMContentLoaded', () => {
   const navDropdown = document.querySelector('.nav-dropdown');
   const menuToggle = document.querySelector('.menu-toggle');
   const mobilePanel = document.querySelector('.mobile-panel');
+  const searchForm = document.querySelector('.search-box');
+  const searchInput = searchForm?.querySelector('input');
+  const categoryButtons = [...document.querySelectorAll('.category-chip')];
+  const productCards = [...document.querySelectorAll('.product-card')];
+  const emptyResults = document.querySelector('.empty-results');
+  let activeCategory = 'todos';
 
-  if (navDropdown) {
-    const trigger = navDropdown.querySelector('button');
+  const normalize = (value) =>
+    value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
 
-    trigger?.addEventListener('click', () => {
-      navDropdown.classList.toggle('is-open');
+  const filterProducts = () => {
+    const searchTerm = normalize(searchInput?.value.trim() ?? '');
+    let visibleCount = 0;
+
+    productCards.forEach((card) => {
+      const matchesCategory =
+        activeCategory === 'todos' || card.dataset.category === activeCategory;
+      const matchesSearch = normalize(card.textContent).includes(searchTerm);
+      const isVisible = matchesCategory && matchesSearch;
+
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
     });
 
-    document.addEventListener('click', (event) => {
-      const target = event.target;
-      if (!(target instanceof Node)) return;
+    if (emptyResults) emptyResults.hidden = visibleCount > 0;
+  };
 
-      if (!navDropdown.contains(target)) {
-        navDropdown.classList.remove('is-open');
-      }
-    });
-  }
+  searchForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    filterProducts();
+    document.querySelector('#vitrine')?.scrollIntoView({ behavior: 'smooth' });
+  });
 
-  if (menuToggle && mobilePanel) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobilePanel.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-    });
+  searchInput?.addEventListener('input', filterProducts);
 
-    mobilePanel.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobilePanel.classList.remove('is-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
+  categoryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeCategory = button.dataset.category ?? 'todos';
+
+      categoryButtons.forEach((categoryButton) => {
+        const isActive = categoryButton === button;
+        categoryButton.classList.toggle('active', isActive);
+        categoryButton.setAttribute('aria-pressed', String(isActive));
       });
+
+      filterProducts();
     });
+  });
 
-    document.addEventListener('click', (event) => {
-      const target = event.target;
-      if (!(target instanceof Node)) return;
+  const whatsappNumber = '5512991307272';
+  document.querySelectorAll('.buy-button[data-whatsapp]').forEach((button) => {
+    const card = button.closest('.product-card');
+    const productName = card?.querySelector('h4')?.textContent.trim();
+    const productPrice = card?.querySelector('.current-price')?.textContent.trim();
 
-      if (!mobilePanel.contains(target) && !menuToggle.contains(target)) {
-        mobilePanel.classList.remove('is-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-});*/
+    if (productName && productPrice) {
+      const message = `Olá! Tenho interesse no produto: ${productName} (${productPrice})`;
+      button.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    }
+  });
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Localiza os elementos que já existem no HTML.
-  const navDropdown = document.querySelector('.nav-dropdown');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobilePanel = document.querySelector('.mobile-panel');
-
-  // Controla o menu de categorias do computador.
   if (navDropdown) {
     const trigger = navDropdown.querySelector('button');
-
-    trigger?.setAttribute('aria-expanded', 'false');
-
-    // Mantém a aparência e o estado acessível sincronizados.
     const setDropdownOpen = (isOpen) => {
       navDropdown.classList.toggle('is-open', isOpen);
       trigger?.setAttribute('aria-expanded', String(isOpen));
     };
 
-    // Abre ou fecha ao clicar em "Categorias".
+    trigger?.setAttribute('aria-expanded', 'false');
     trigger?.addEventListener('click', () => {
       setDropdownOpen(!navDropdown.classList.contains('is-open'));
     });
 
-    // Fecha ao clicar fora.
     document.addEventListener('click', (event) => {
-      if (!(event.target instanceof Node)) return;
-
-      if (!navDropdown.contains(event.target)) {
+      if (event.target instanceof Node && !navDropdown.contains(event.target)) {
         setDropdownOpen(false);
-      }
-    });
-
-    // Fecha com a tecla Escape.
-    document.addEventListener('keydown', (event) => {
-      if (
-        event.key === 'Escape' &&
-        navDropdown.classList.contains('is-open')
-      ) {
-        setDropdownOpen(false);
-        trigger?.focus();
       }
     });
   }
 
-  // Controla o menu de celular.
   if (menuToggle && mobilePanel) {
-    // Centraliza a atualização do painel e do botão.
     const setMobileOpen = (isOpen) => {
       mobilePanel.classList.toggle('is-open', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute(
-        'aria-label',
-        isOpen ? 'Fechar menu' : 'Abrir menu'
-      );
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
     };
 
-    // Abre ou fecha ao tocar nas três barras.
     menuToggle.addEventListener('click', () => {
       setMobileOpen(!mobilePanel.classList.contains('is-open'));
     });
 
-    // Fecha depois de escolher um link.
     mobilePanel.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        setMobileOpen(false);
-      });
+      link.addEventListener('click', () => setMobileOpen(false));
     });
 
-    // Fecha ao tocar fora do painel e do botão.
     document.addEventListener('click', (event) => {
-      if (!(event.target instanceof Node)) return;
-
       if (
+        event.target instanceof Node &&
         !mobilePanel.contains(event.target) &&
         !menuToggle.contains(event.target)
       ) {
@@ -128,22 +107,36 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Fecha com Escape e devolve o foco ao botão.
     document.addEventListener('keydown', (event) => {
-      if (
-        event.key === 'Escape' &&
-        mobilePanel.classList.contains('is-open')
-      ) {
+      if (event.key !== 'Escape') return;
+
+      if (mobilePanel.classList.contains('is-open')) {
         setMobileOpen(false);
         menuToggle.focus();
       }
+
+      if (navDropdown?.classList.contains('is-open')) {
+        navDropdown.classList.remove('is-open');
+        navDropdown.querySelector('button')?.setAttribute('aria-expanded', 'false');
+      }
     });
 
-    // Fecha o painel ao voltar para o layout de computador.
-    const mobileLayout = window.matchMedia('(max-width: 1100px)');
-
-    mobileLayout.addEventListener('change', () => {
+    window.matchMedia('(max-width: 1100px)').addEventListener('change', () => {
       setMobileOpen(false);
     });
   }
+
+/* Fim do JavaScript */
+document.querySelectorAll('.product-media').forEach((media) => {
+  if (!media.querySelector('.img-hover')) return;
+
+  media.addEventListener('click', () => {
+    media.classList.toggle('mostrar-2');
+  });
+});
+
+
+
+
+
 });

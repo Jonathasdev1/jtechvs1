@@ -1,0 +1,25 @@
+:root { font-family: system-ui, sans-serif; color: #17233c; background: #f3f5f9; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header { background: #17233c; color: white; padding: 28px max(24px, calc((100vw - 1200px) / 2)); display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+header p { margin: 0; color: #b6c6e3; } h1 { margin: 6px 0; font-size: 28px; } header a { color: white; }
+main { max-width: 1248px; padding: 24px; margin: auto; }
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+section { background: white; padding: 24px; border: 1px solid #dce2ed; border-radius: 14px; min-width: 0; }
+h2 { margin: 0 0 20px; font-size: 22px; } .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+label { display: block; font-weight: 600; margin: 16px 0 6px; font-size: 14px; }
+input { width: 100%; padding: 12px; border: 1px solid #aab5c8; border-radius: 7px; font: inherit; }
+button { border: 0; border-radius: 7px; padding: 12px 16px; background: #2458bb; color: white; font: inherit; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: .5; cursor: wait; } button:hover:enabled { filter: brightness(.9); }
+button.secondary { background: #e9eef8; color: #17233c; } button.danger { background: #fff0ef; color: #a12323; }
+:focus-visible { outline: 3px solid #edab19; outline-offset: 3px; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.prices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.hint { color: #57647a; font-size: 14px; line-height: 1.6; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.product-row { padding: 18px 0; border-bottom: 1px solid #e3e8f0; }
+.product-row p { margin: 0 0 12px; overflow-wrap: anywhere; } .product-row small { display: block; color: #57647a; margin-bottom: 5px; }
+#products { max-height: 690px; overflow-y: auto; margin: 12px 0 20px; }
+#message:not(:empty) { background: #e3edff; padding: 14px; border-radius: 8px; } #message.error { background: #ffe8e8; color: #912020; }
+#storage-mode { line-height: 1.6; }
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; } header { align-items: start; flex-direction: column; } main { padding: 16px; } section { padding: 18px; } #products { max-height: 350px; } }

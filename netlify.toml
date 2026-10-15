@@ -7,6 +7,11 @@
   NPM_FLAGS = "--ignore-scripts"
 
 [[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

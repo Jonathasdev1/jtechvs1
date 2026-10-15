@@ -7,3 +7,6 @@ dist/
 npm-debug.log*
 .vite/
 coverage/
+
+index.html.admin-backup
+index.html.admin-tmp

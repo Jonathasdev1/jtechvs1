@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de produtos | J-TECH</title>
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <header><div><p>J-TECH • Administração</p><h1>Painel de produtos</h1></div><a href="./index.html" target="_blank" rel="noopener">Abrir catálogo ↗</a></header>
+  <main>
+    <p id="storage-mode" role="status">Carregando catálogo…</p>
+    <p id="message" role="status" aria-live="polite"></p>
+    <div class="layout">
+      <section aria-labelledby="products-heading">
+        <div class="section-heading"><h2 id="products-heading">Produtos <span id="count"></span></h2><button id="new-product" type="button" disabled>Novo produto</button></div>
+        <label for="search">Buscar produto</label><input id="search" type="search" placeholder="Digite o título">
+        <div id="products"></div>
+        <button id="download" type="button" disabled>Baixar index.html atualizado</button>
+      </section>
+      <section aria-labelledby="form-heading">
+        <h2 id="form-heading">Novo produto</h2>
+        <form id="product-form">
+          <fieldset id="fields" disabled>
+            <label for="title">Título do produto</label><input id="title" name="title" required maxlength="300">
+            <label for="image">Link da imagem principal</label><input id="image" name="image" required placeholder="https://… ou ./img/foto.webp">
+            <label for="imageAlt">Título / descrição da imagem principal</label><input id="imageAlt" name="imageAlt" required maxlength="300">
+            <label for="hoverImage">Link da segunda imagem</label><input id="hoverImage" name="hoverImage" required placeholder="https://… ou ./img/foto-2.webp">
+            <label for="hoverAlt">Título / descrição da segunda imagem</label><input id="hoverAlt" name="hoverAlt" required maxlength="300">
+            <label for="discount">Desconto (%)</label><input id="discount" name="discount" type="number" min="0" max="100" step="0.01" required placeholder="14">
+            <div class="prices"><div><label for="price">Preço atual (R$)</label><input id="price" name="price" type="number" min="0.01" step="0.01" required placeholder="248,35"></div><div><label for="oldPrice">Preço anterior (R$)</label><input id="oldPrice" name="oldPrice" type="number" min="0.01" step="0.01" required placeholder="289,90"></div></div>
+            <label for="affiliate">Link de afiliado</label><input id="affiliate" name="affiliate" type="url" required placeholder="https://meli.la/…">
+            <p class="hint">Novos cards seguem o modelo: categoria Casa, selo “Mais vendido” e botão “Ver oferta”. Ao editar, a categoria existente é mantida.</p>
+            <div class="actions"><button id="save" type="submit">Criar produto</button><button id="cancel" class="secondary" type="button">Cancelar edição</button></div>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="./admin.js" defer></script>
+</body>
+</html>

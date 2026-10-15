@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "admin": "node admin-server.mjs",
     "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
     "dev:client": "vite --host 0.0.0.0 --port 5173",
     "dev:server": "node server/index.js",
